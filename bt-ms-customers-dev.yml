@@ -1,7 +1,4 @@
-server:
-    port: ${CUSTOM.SERVER.PORT:8081}
-  
 spring:
-    data:
-        mongodb:
-            uri: mongodb://localhost:27017/bootcampbdcustomers
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/bootcampbdcustomers
