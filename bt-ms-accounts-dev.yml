@@ -1,3 +1,6 @@
-bootcamp:
-    name: bt-ms-accounts-dev
-    owner: Aldo Suarez
+server:
+  port: ${CUSTOMER.SERVER.PORT:8082}    
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/bootcampbdaccounts
