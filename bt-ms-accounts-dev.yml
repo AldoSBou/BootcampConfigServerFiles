@@ -3,7 +3,7 @@ server:
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017/bootcampbdaccounts
+      uri: ${MONGODB.URL.CONNECTION:mongodb://localhost:27017/bootcampbdaccounts}
       
 # Eureka Client Configuration
 eureka:
