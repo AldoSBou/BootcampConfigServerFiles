@@ -5,6 +5,10 @@ spring:
     mongodb:
       uri: ${MONGODB.URL.CONNECTION:mongodb://bootcamp:bootcamp@localhost:27017/bootcampbdaccounts?authSource=admin}
       
+  redis:
+    host: localhost
+    port: 6379
+      
 # Eureka Client Configuration
 eureka:
   client:

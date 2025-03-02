@@ -5,6 +5,10 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017/bootcampbdproducts
       
+  redis:
+    host: localhost
+    port: 6379
+      
 # Eureka Client Configuration
 eureka:
   client:
