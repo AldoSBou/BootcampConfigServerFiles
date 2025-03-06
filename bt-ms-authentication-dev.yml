@@ -1,8 +1,12 @@
 server:
   port: ${CUSTOMER.SERVER.PORT:8089}
-  
-  
-# Eureka Client Configuration
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: Ov23liIIuPT7dpVAK7hg
+            client-secret: f0f4c6542bad5748e189708aa0a4f7a6d12bd558
 eureka:
   client:
     fetchRegistry: true
