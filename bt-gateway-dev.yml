@@ -4,8 +4,27 @@ eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA.SERVER.HOSTNAME:http://localhost:8761/eureka}
-
 spring:
+  security:
+    oauth2:
+      resourceServer:
+        jwt:
+          issuer-uri: http://localhost:8089
+      client:
+        registration:
+          client-app:
+            provider: spring
+            client-id: gateway-app
+            client-secret: 12345
+            authorization-grant-type: authorization_code
+            redirect-uri: http://127.0.0.1:8099/authorized
+            score:
+              - openid
+              - profile
+            client-name: client-app
+        provider:
+          spring:
+            issuer-uri: http://localhost:8089
   main:
     allow-bean-definition-overriding: true
   application:
@@ -16,6 +35,12 @@ spring:
         locator:
           enabled: true
       routes:
+        - id: bt-ms-oauth
+          uri: lb://bt-ms-oauth
+          predicates:
+            - Path=/ms-security/**
+          filters:
+            - RewritePath=/ms-security/(?<x>.*), /$\{x}
         - id: bt-ms-accounts
           uri: lb://bt-ms-accounts
           predicates:
