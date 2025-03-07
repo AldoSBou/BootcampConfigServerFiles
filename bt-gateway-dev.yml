@@ -1,5 +1,5 @@
 server:
-  port: 8095
+  port: ${CUSTOMER.SERVER.PORT:8090}
 eureka:
   client:
     serviceUrl:
@@ -7,9 +7,9 @@ eureka:
 spring:
   security:
     oauth2:
-      resourceServer:
+      resourceserver:
         jwt:
-          issuer-uri: http://localhost:8089
+          issuer-uri: http://127.0.0.1:9100
       client:
         registration:
           client-app:
@@ -17,14 +17,14 @@ spring:
             client-id: gateway-app
             client-secret: 12345
             authorization-grant-type: authorization_code
-            redirect-uri: http://127.0.0.1:8095/authorized
-            score:
-              - openid
-              - profile
+            redirect-uri: http://127.0.0.1:8090/authorized
+            scope:
+            - openid
+            - profile
             client-name: client-app
         provider:
           spring:
-            issuer-uri: http://localhost:8089
+            issuer-uri: http://127.0.0.1:9100
   main:
     allow-bean-definition-overriding: true
   application:
