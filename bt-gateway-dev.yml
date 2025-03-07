@@ -53,4 +53,5 @@ spring:
             - Path=/ms-users/**
           filters:
             - RewritePath=/ms-users/(?<x>.*), /$\{x}
+            - StripPrefix=1
             
