@@ -47,3 +47,10 @@ spring:
             - Path=/ms-accounts/**
           filters:
             - RewritePath=/ms-accounts/(?<x>.*), /$\{x}
+        - id: bt-ms-users
+          uri: lb://bt-ms-users
+          predicates:
+            - Path=/ms-users/**
+          filters:
+            - RewritePath=/ms-users/(?<x>.*), /$\{x}
+            
