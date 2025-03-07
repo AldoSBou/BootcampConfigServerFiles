@@ -1,5 +1,5 @@
 server:
-  port: ${CUSTOMER.SERVER.PORT:9100}    
+  port: ${CUSTOMER.SERVER.PORT:9002}    
 spring:
   data:
     mongodb:
