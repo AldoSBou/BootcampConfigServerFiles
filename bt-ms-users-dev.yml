@@ -1,0 +1,17 @@
+server:
+  port: ${CUSTOMER.SERVER.PORT:8087}    
+spring:
+  data:
+    mongodb:
+      uri: ${MONGODB.URL.CONNECTION:mongodb://bootcamp:bootcamp@localhost:27017/bootcampbdusers?authSource=admin}
+      
+# Eureka Client Configuration
+eureka:
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: ${EUREKA.SERVER.HOSTNAME:http://localhost:8761/eureka}
+  instance:
+    hostname: localhost
+    prefer-ip-address: false
