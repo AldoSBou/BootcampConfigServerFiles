@@ -12,3 +12,11 @@ eureka:
     registerWithEureka: true
     serviceUrl:
       defaultZone: ${EUREKA.SERVER.HOSTNAME:http://localhost:8761/eureka}
+      
+#Kafka Configuration
+bootcamp:
+  kafka:
+    serverHost: 127.0.0.1
+    serverPort: 9092
+    topic:
+      userCreated: user-created

@@ -15,3 +15,11 @@ eureka:
   instance:
     hostname: localhost
     prefer-ip-address: false
+ 
+#Kafka Configuration
+bootcamp:
+  kafka:
+    serverHost: 127.0.0.1
+    serverPort: 9092
+    topic:
+      userCreated: user-created
