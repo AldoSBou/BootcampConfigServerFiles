@@ -20,3 +20,4 @@ bootcamp:
     serverPort: 9092
     topic:
       userCreated: user-created
+    group-id: customer-group
